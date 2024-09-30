@@ -1,0 +1,15 @@
+{
+  "originHash" : "28310587e0989b156af8289ed3adf62eee1e5e389188878a14ca83c87c0a1383",
+  "pins" : [
+    {
+      "identity" : "basetoolbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lkzhao/BaseToolbox",
+      "state" : {
+        "revision" : "8f7dcb4d0b5e1422959cb26a8d0ce876b1081ee6",
+        "version" : "0.6.1"
+      }
+    }
+  ],
+  "version" : 3
+}

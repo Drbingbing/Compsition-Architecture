@@ -13,6 +13,18 @@
 		443B6DF72C9C1D7400F0A659 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 443B6DF62C9C1D7400F0A659 /* Base */; };
 		443B6DF92C9C1D7500F0A659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443B6DF82C9C1D7500F0A659 /* Assets.xcassets */; };
 		443B6DFC2C9C1D7500F0A659 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 443B6DFB2C9C1D7500F0A659 /* Base */; };
+		443B6E052C9C1D8100F0A659 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B6E042C9C1D8100F0A659 /* Order.swift */; };
+		443B6E072C9D110000F0A659 /* FinshedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B6E062C9D110000F0A659 /* FinshedOrder.swift */; };
+		443B6E0A2C9D129E00F0A659 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B6E092C9D129E00F0A659 /* AppState.swift */; };
+		443B6E0C2C9D131A00F0A659 /* FinishedOrderBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443B6E0B2C9D131A00F0A659 /* FinishedOrderBox.swift */; };
+		4447691B2CAA4F94003BBCD4 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4447691A2CAA4F91003BBCD4 /* SampleData.swift */; };
+		4447691D2CAA514C003BBCD4 /* IncomingOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4447691C2CAA5149003BBCD4 /* IncomingOrder.swift */; };
+		444769202CAA51BA003BBCD4 /* OrderItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4447691F2CAA51B5003BBCD4 /* OrderItemState.swift */; };
+		4495196C2CA68ED800451973 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495196B2CA68ED800451973 /* Environment.swift */; };
+		4495196E2CA690D900451973 /* AnyPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495196D2CA690D900451973 /* AnyPersistenceStore.swift */; };
+		449519762CA6A04200451973 /* OrderItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449519752CA6A04200451973 /* OrderItemCell.swift */; };
+		449519792CA6A0E100451973 /* BaseToolbox in Frameworks */ = {isa = PBXBuildFile; productRef = 449519782CA6A0E100451973 /* BaseToolbox */; };
+		4495197B2CA6ABEA00451973 /* OrderHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495197A2CA6ABEA00451973 /* OrderHeaderSupplementaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,17 @@
 		443B6DF82C9C1D7500F0A659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		443B6DFB2C9C1D7500F0A659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		443B6DFD2C9C1D7500F0A659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443B6E042C9C1D8100F0A659 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		443B6E062C9D110000F0A659 /* FinshedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinshedOrder.swift; sourceTree = "<group>"; };
+		443B6E092C9D129E00F0A659 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		443B6E0B2C9D131A00F0A659 /* FinishedOrderBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedOrderBox.swift; sourceTree = "<group>"; };
+		4447691A2CAA4F91003BBCD4 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		4447691C2CAA5149003BBCD4 /* IncomingOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingOrder.swift; sourceTree = "<group>"; };
+		4447691F2CAA51B5003BBCD4 /* OrderItemState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemState.swift; sourceTree = "<group>"; };
+		4495196B2CA68ED800451973 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		4495196D2CA690D900451973 /* AnyPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPersistenceStore.swift; sourceTree = "<group>"; };
+		449519752CA6A04200451973 /* OrderItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemCell.swift; sourceTree = "<group>"; };
+		4495197A2CA6ABEA00451973 /* OrderHeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderSupplementaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449519792CA6A0E100451973 /* BaseToolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +80,12 @@
 		443B6DEE2C9C1D7400F0A659 /* Compsition Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				444769192CAA4F88003BBCD4 /* SampleData */,
+				449519732CA6A02400451973 /* Feature */,
+				4495196A2CA68ECB00451973 /* Environment */,
+				449519692CA68EB700451973 /* PersistenceStore */,
+				443B6E082C9D129600F0A659 /* Context */,
+				443B6E032C9C1D7900F0A659 /* Model */,
 				443B6DEF2C9C1D7400F0A659 /* AppDelegate.swift */,
 				443B6DF12C9C1D7400F0A659 /* SceneDelegate.swift */,
 				443B6DF32C9C1D7400F0A659 /* ViewController.swift */,
@@ -65,6 +95,67 @@
 				443B6DFD2C9C1D7500F0A659 /* Info.plist */,
 			);
 			path = "Compsition Architecture";
+			sourceTree = "<group>";
+		};
+		443B6E032C9C1D7900F0A659 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4447691C2CAA5149003BBCD4 /* IncomingOrder.swift */,
+				443B6E042C9C1D8100F0A659 /* Order.swift */,
+				443B6E062C9D110000F0A659 /* FinshedOrder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		443B6E082C9D129600F0A659 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				4447691F2CAA51B5003BBCD4 /* OrderItemState.swift */,
+				443B6E092C9D129E00F0A659 /* AppState.swift */,
+				443B6E0B2C9D131A00F0A659 /* FinishedOrderBox.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		444769192CAA4F88003BBCD4 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				4447691A2CAA4F91003BBCD4 /* SampleData.swift */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+		449519692CA68EB700451973 /* PersistenceStore */ = {
+			isa = PBXGroup;
+			children = (
+				4495196D2CA690D900451973 /* AnyPersistenceStore.swift */,
+			);
+			path = PersistenceStore;
+			sourceTree = "<group>";
+		};
+		4495196A2CA68ECB00451973 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				4495196B2CA68ED800451973 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		449519732CA6A02400451973 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				449519742CA6A02800451973 /* Page1 */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		449519742CA6A02800451973 /* Page1 */ = {
+			isa = PBXGroup;
+			children = (
+				449519752CA6A04200451973 /* OrderItemCell.swift */,
+				4495197A2CA6ABEA00451973 /* OrderHeaderSupplementaryView.swift */,
+			);
+			path = Page1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +174,9 @@
 			dependencies = (
 			);
 			name = "Compsition Architecture";
+			packageProductDependencies = (
+				449519782CA6A0E100451973 /* BaseToolbox */,
+			);
 			productName = "Compsition Architecture";
 			productReference = 443B6DEC2C9C1D7400F0A659 /* Compsition Architecture.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +205,9 @@
 				Base,
 			);
 			mainGroup = 443B6DE32C9C1D7400F0A659;
+			packageReferences = (
+				449519772CA6A0E100451973 /* XCRemoteSwiftPackageReference "BaseToolbox" */,
+			);
 			productRefGroup = 443B6DED2C9C1D7400F0A659 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +236,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				443B6DF42C9C1D7400F0A659 /* ViewController.swift in Sources */,
+				4495196C2CA68ED800451973 /* Environment.swift in Sources */,
+				444769202CAA51BA003BBCD4 /* OrderItemState.swift in Sources */,
+				4447691D2CAA514C003BBCD4 /* IncomingOrder.swift in Sources */,
 				443B6DF02C9C1D7400F0A659 /* AppDelegate.swift in Sources */,
+				4495196E2CA690D900451973 /* AnyPersistenceStore.swift in Sources */,
+				443B6E052C9C1D8100F0A659 /* Order.swift in Sources */,
+				4495197B2CA6ABEA00451973 /* OrderHeaderSupplementaryView.swift in Sources */,
+				4447691B2CAA4F94003BBCD4 /* SampleData.swift in Sources */,
+				443B6E072C9D110000F0A659 /* FinshedOrder.swift in Sources */,
+				443B6E0A2C9D129E00F0A659 /* AppState.swift in Sources */,
+				449519762CA6A04200451973 /* OrderItemCell.swift in Sources */,
 				443B6DF22C9C1D7400F0A659 /* SceneDelegate.swift in Sources */,
+				443B6E0C2C9D131A00F0A659 /* FinishedOrderBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +469,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		449519772CA6A0E100451973 /* XCRemoteSwiftPackageReference "BaseToolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lkzhao/BaseToolbox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		449519782CA6A0E100451973 /* BaseToolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 449519772CA6A0E100451973 /* XCRemoteSwiftPackageReference "BaseToolbox" */;
+			productName = BaseToolbox;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 443B6DE42C9C1D7400F0A659 /* Project object */;
 }
