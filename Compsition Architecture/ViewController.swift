@@ -43,13 +43,13 @@ class ViewController: UIViewController {
     private lazy var dataSource: UICollectionViewDiffableDataSource<Order, OrderItem> = {
         let headerRegistration = UICollectionView.SupplementaryRegistration<OrderHeaderSupplementaryView>(elementKind: ViewController.sectionHeaderElementKind) { [weak self] supplementaryView, string, indexPath in
             guard let self else { return }
-            let order = appState.order(at: indexPath)
+            if appState.allOrders.isEmpty { return }
+            let order = appState.allOrders[indexPath.section]
             supplementaryView.label.text = order.tag
         }
         
         let cellRegistration = UICollectionView.CellRegistration<OrderItemCell, OrderItem> { cell, indexPath, orderItem in
-            cell.nameLabel.text = orderItem.name
-            cell.quantityLabel.text = "\(orderItem.quantity)"
+            cell.populate(orderItem: orderItem)
         }
         
         let dataSource = UICollectionViewDiffableDataSource<Order, OrderItem>(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
@@ -71,31 +71,36 @@ class ViewController: UIViewController {
         
         view.addSubview(collectionView)
         
-        setupInitialData()
+        collectionView.delegate = self
         
-        appState.$orders
+        appState.$allOrders
             .sink { [weak self] orders in
                 guard let self else { return }
                 var snapshot = NSDiffableDataSourceSnapshot<Order, OrderItem>()
                 for order in orders {
                     snapshot.appendSections([order])
-                    snapshot.appendItems(order.orderItems, toSection: order)
+                    snapshot.appendItems(order.items, toSection: order)
                 }
                 self.dataSource.apply(snapshot, animatingDifferences: true)
             }
             .store(in: &subsripction)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        appState.mockOrders()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds.inset(by: view.safeAreaInsets)
     }
-    
-    private func setupInitialData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Order, OrderItem>()
-        snapshot.appendSections([])
-        snapshot.appendItems([])
-        dataSource.apply(snapshot, animatingDifferences: false)
-    }
 }
 
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let order = appState.allOrders[indexPath.section]
+        let item = order.items[indexPath.item]
+        appState.markOrderItemAsCompleted(in: order.orderID, itemID: item.itemID)
+    }
+}

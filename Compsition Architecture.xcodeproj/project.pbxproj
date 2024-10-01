@@ -20,6 +20,7 @@
 		4447691B2CAA4F94003BBCD4 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4447691A2CAA4F91003BBCD4 /* SampleData.swift */; };
 		4447691D2CAA514C003BBCD4 /* IncomingOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4447691C2CAA5149003BBCD4 /* IncomingOrder.swift */; };
 		444769202CAA51BA003BBCD4 /* OrderItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4447691F2CAA51B5003BBCD4 /* OrderItemState.swift */; };
+		447A064E2CAAAC7500FEC0B6 /* SwiftRichString in Frameworks */ = {isa = PBXBuildFile; productRef = 447A064D2CAAAC7500FEC0B6 /* SwiftRichString */; };
 		4495196C2CA68ED800451973 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495196B2CA68ED800451973 /* Environment.swift */; };
 		4495196E2CA690D900451973 /* AnyPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495196D2CA690D900451973 /* AnyPersistenceStore.swift */; };
 		449519762CA6A04200451973 /* OrderItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449519752CA6A04200451973 /* OrderItemCell.swift */; };
@@ -55,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449519792CA6A0E100451973 /* BaseToolbox in Frameworks */,
+				447A064E2CAAAC7500FEC0B6 /* SwiftRichString in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +178,7 @@
 			name = "Compsition Architecture";
 			packageProductDependencies = (
 				449519782CA6A0E100451973 /* BaseToolbox */,
+				447A064D2CAAAC7500FEC0B6 /* SwiftRichString */,
 			);
 			productName = "Compsition Architecture";
 			productReference = 443B6DEC2C9C1D7400F0A659 /* Compsition Architecture.app */;
@@ -207,6 +210,7 @@
 			mainGroup = 443B6DE32C9C1D7400F0A659;
 			packageReferences = (
 				449519772CA6A0E100451973 /* XCRemoteSwiftPackageReference "BaseToolbox" */,
+				447A064C2CAAAC7500FEC0B6 /* XCRemoteSwiftPackageReference "SwiftRichString" */,
 			);
 			productRefGroup = 443B6DED2C9C1D7400F0A659 /* Products */;
 			projectDirPath = "";
@@ -471,6 +475,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		447A064C2CAAAC7500FEC0B6 /* XCRemoteSwiftPackageReference "SwiftRichString" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftRichString.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.2;
+			};
+		};
 		449519772CA6A0E100451973 /* XCRemoteSwiftPackageReference "BaseToolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lkzhao/BaseToolbox";
@@ -482,6 +494,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		447A064D2CAAAC7500FEC0B6 /* SwiftRichString */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 447A064C2CAAAC7500FEC0B6 /* XCRemoteSwiftPackageReference "SwiftRichString" */;
+			productName = SwiftRichString;
+		};
 		449519782CA6A0E100451973 /* BaseToolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 449519772CA6A0E100451973 /* XCRemoteSwiftPackageReference "BaseToolbox" */;

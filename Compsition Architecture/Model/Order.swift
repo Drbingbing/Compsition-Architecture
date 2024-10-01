@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct OrderItem: Hashable, Sendable {
+public struct OrderItem: Hashable, Sendable, Identifiable {
+    
+    public var id: Int { itemID }
     
     public var state: OrderItemState
     public let itemID: Int
@@ -24,15 +26,17 @@ public struct OrderItem: Hashable, Sendable {
     }
 }
 
-public struct Order: Sendable, Hashable {
+public struct Order: Sendable, Hashable, Identifiable {
+    
+    public var id: Int { orderID }
     
     public let orderID: Int
     public let tag: String
-    public let orderItems: [OrderItem]
+    public var items: [OrderItem]
     
-    public init(orderID: Int, tag: String, orderItems: [OrderItem]) {
+    public init(orderID: Int, tag: String, items: [OrderItem]) {
         self.orderID = orderID
         self.tag = tag
-        self.orderItems = orderItems
+        self.items = items
     }
 }

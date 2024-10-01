@@ -7,6 +7,7 @@
 
 import UIKit
 import BaseToolbox
+import SwiftRichString
 
 final class OrderItemCell: UICollectionViewCell {
     
@@ -14,7 +15,7 @@ final class OrderItemCell: UICollectionViewCell {
     private var spacingBetweenNameAndQuantity: CGFloat = 10
     
     lazy var nameLabel = UILabel()
-    lazy var quantityLabel = UILabel()
+    lazy var quantityLabel = UILabel().then { $0.textColor = .red }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +29,8 @@ final class OrderItemCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        nameLabel.sizeToFit()
-        nameLabel.frame.origin = bounds.topLeft.translate(insets.left, dy: insets.top)
+        let nameSize = nameLabel.sizeThatFits(bounds.size)
+        nameLabel.frame = CGRect(x: bounds.minX + insets.left, y: bounds.leftCenter.y - nameSize.height / 2, width: nameSize.width, height: nameSize.height)
         let size = quantityLabel.sizeThatFits(bounds.size)
         quantityLabel.frame = CGRect(center: bounds.rightCenter.translate(-insets.right - size.width, dy: 0), size: size)
     }
@@ -50,5 +51,19 @@ final class OrderItemCell: UICollectionViewCell {
         width += quantitySize.width
         
         return CGSize(width: width + leftRightMargin, height: height + topBottomMargin)
+    }
+    
+    func populate(orderItem: OrderItem) {
+        let name = orderItem.name.set(style: Style { $0.font = Font.boldSystemFont(ofSize: 14) })
+        let state = if case let .finished(completeDate) = orderItem.state {
+            "Completed at\(completeDate)".set(style: Style {
+                $0.font = Font.boldSystemFont(ofSize: 12)
+                $0.color = Color.systemYellow
+            })
+        } else { AttributedString(string: "") }
+        
+        nameLabel.attributedText = name + " " + state
+        
+        quantityLabel.text = "\(orderItem.quantity)"
     }
 }

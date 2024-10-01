@@ -11,15 +11,15 @@ final class AppState {
     
     private let finishedItemBox: any FinishedOrderBox = FinishedOrderItemBoxImpl()
     
-    @Published var orders: [Order] = []
+    @Published var allOrders: [Order] = []
     
     func mockOrders() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.orders = SampleData.A1.map {
+            self.allOrders = SampleData.A1.map {
                 Order(
                     orderID: $0.orderID,
                     tag: $0.tag,
-                    orderItems: $0.orderItems.map {
+                    items: $0.orderItems.map {
                         OrderItem(itemID: $0.itemID, orderID: $0.orderID, name: $0.name, quantity: $0.quantity, state: .new)
                     }
                 )
@@ -27,16 +27,14 @@ final class AppState {
         }
     }
     
-    func order(at indexPath: IndexPath) -> Order {
-        return orders[indexPath.section]
-    }
-    
-    func markOrderItemAsCompleted(_ orderItem: OrderItem) {
-        Task {
-            await finishedItemBox.add([orderItem])
+    func markOrderItemAsCompleted(in orderID: Order.ID, itemID: OrderItem.ID) {
+        Task { @MainActor in
+            guard let index = allOrders.firstIndex(where: { $0.orderID == orderID }) else { return }
+            guard let itemIndex = allOrders[index].items.firstIndex(where: { $0.itemID == itemID }) else { return }
             
-            guard let index = orders.firstIndex(where: { $0.orderID == orderItem.orderID }) else { return }
-            
+            let orderItem = allOrders[index].items[itemIndex]
+            let finishedItem = await finishedItemBox.add(orderItem: orderItem)
+            allOrders[index].items[itemIndex].state = .finished(finishedItem.date)
         }
     }
 }
